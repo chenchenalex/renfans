@@ -1,0 +1,63 @@
+<?php TPL::output('m/header.tpl.htm'); ?>
+<?php TPL::output('m/global_header.tpl.htm'); ?>
+
+<!-- 内容 -->
+<div class="aw-content aw-question-page">
+	<?php if ($this->content_nav_menu) { ?>
+	<!-- 话题标签 -->
+	<div class="aw-topic-tags clearfix">
+		<div class="aw-mod-head">
+			<h3>想找一份怎样的实习？</h3>
+		</div>
+		<div class="aw-mod-body">
+			<p>
+				行业：
+				<a href="topic/金融" class="aw-topic-name-big aw-topic-name"><span>金融</span></a>
+				<a href="topic/IT" class="aw-topic-name-big aw-topic-name"><span>科技</span></a>
+				<a href="topic/咨询" class="aw-topic-name-big aw-topic-name"><span>咨询</span></a>
+				<a href="topic/快消" class="aw-topic-name-big aw-topic-name"><span>快消</span></a>
+				<a href="topic/square/" class="aw-topic-name-big aw-topic-name"><span>更多</span></a>
+			</p>
+			<p>
+				亮点：
+				<a href="topic/500强" class="aw-topic-name-big aw-topic-name"><span>名企</span></a>
+				<a href="topic/高薪" class="aw-topic-name-big aw-topic-name"><span>高薪</span></a>
+				<a href="topic/可留用" class="aw-topic-name-big aw-topic-name"><span>可留用</span></a>
+			</p>
+			<p>* 关注微信renfanwang，每天都有好实习！
+		</div>
+	</div>
+	<!--
+	<div class="aw-topic-tags clearfix">
+		<ul>
+			<li<?php if (!$_GET['category'] AND !$this->feature_info) { ?> class="active"<?php } ?>><a href="<?php echo $this->content_nav_menu['base']['link']; ?>"><?php _e('全部'); ?></a></li>
+			<?php foreach ($this->content_nav_menu as $key => $val) { ?>
+			<?php if ($val['title']) { ?>
+			<li<?php if (($val['type'] == 'category' AND $_GET['category'] AND ($val['type_id'] == $this->category_info['id'])) OR ($val['type'] == 'feature' AND $this->feature_info['id'] == $val['type_id'])) { ?> class="active"<?php } ?>>
+				<a href="<?php echo $val['link']; ?>"<?php if ($val['type'] == 'custom') { ?> target="_blank"<?php } ?>><?php echo $val['title']; ?></a>
+			</li>
+			<?php } ?>
+			<?php } ?>
+		</ul>
+	</div>
+	-->
+	<!-- end 话题标签 -->
+	<?php } ?>
+	
+	<div class="feed-list article">
+		<h3>最新人贩贴</h3>
+		<ul id="article_listview"></ul>
+		<a id="load_article" class="aw-load-more"><?php _e('更多'); ?></a>
+	</div>
+	
+	
+</div>
+<!-- end 内容 -->
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		load_list_view(G_BASE_URL + '/explore/ajax/list/post_type-article__sort_type-new__feature_id-<?php echo $_GET['feature_id']; ?>__category_id-<?php echo $_GET['category']; ?>__template-m', $('#article_listview'), $('#load_article'), 1);
+	});
+</script>
+
+<?php TPL::output('m/footer.tpl.htm'); ?>

@@ -1,0 +1,44 @@
+<div class="aw-side-bar-mod aw-text-align-justify">
+	<div class="aw-mod-head">
+		<h3><?php if ($this->feature_info){ ?><?php _e('该专题包含'); ?> <?php _e('%s 个话题', $this->feature_info['topic_count']); ?><?php } else { ?><?php _e('想找一份怎样的实习？'); ?><?php } ?></h3>
+	</div>
+	<div class="aw-mod-body">
+		<p>
+			行业：
+			<a href="topic/金融" class="aw-topic-name-big aw-topic-name"><span>金融</span></a>
+			<a href="topic/IT" class="aw-topic-name-big aw-topic-name"><span>科技</span></a>
+			<a href="topic/咨询" class="aw-topic-name-big aw-topic-name"><span>咨询</span></a>
+		</p>
+		<p>
+			亮点：
+			<a href="topic/名企" class="aw-topic-name-big aw-topic-name"><span>名企</span></a>
+			<a href="topic/高薪" class="aw-topic-name-big aw-topic-name"><span>高薪</span></a>
+			<a href="topic/可留用" class="aw-topic-name-big aw-topic-name"><span>留用</span></a>
+		</p>
+
+		<!--
+		<?php if (is_array($this->sidebar_hot_topics)) { ?>
+		<?php foreach($this->sidebar_hot_topics AS $key => $val) {?>
+			<dl>
+				<dt class="pull-left aw-border-radius-5">
+					<a href="topic/<?php echo $val['url_token']; ?>"><img alt="" src="<?php echo get_topic_pic_url('mid', $val['topic_pic']); ?>" /></a>
+				</dt>
+				<dd class="pull-left">
+					<a href="topic/<?php echo $val['url_token']; ?>" class="aw-topic-name" data-id="<?php echo $val['topic_id']; ?>"><span><?php echo $val['topic_title'];?></span></a>
+					<p><?php _e('该话题下有'); ?> <?php _e('%s 个问题', '<b>' . $val['discuss_count'] . '</b>'); ?>, <?php _e('%s 个关注', '<b>' . $val['focus_count'] . '</b>'); ?></p>
+				</dd>
+			</dl>
+		<?php } ?>
+		<?php } ?>
+		-->
+		
+		<dl>
+			<dt class="pull-left aw-border-radius-5">
+				
+			</dt>
+			<dd class="pull-left">
+				<a href="topic/square/hot" class="btn btn-small btn-success" style="margin:12px 0 10px 0;"><?php _e('更多行业名企'); ?></a>
+			</dd>
+		</dl>
+	</div>
+</div>

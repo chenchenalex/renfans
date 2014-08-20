@@ -1,0 +1,32 @@
+<!-- 修改行业分类与公司 -->
+<?php $category = array(
+	array("IT","蜻蜓FM"),
+	array("金融","渣打"),
+	array("房地产"),
+	array("商业服务","美世","万宝盛华","科锐","博雅","帕特侬"),
+	array("广告","阳狮"),
+	array("快消","百事","欧莱雅","达能","汉高","阿迪达斯","利丰亚洲","J.D. Power"),
+	array("制造","博世","霍尼韦尔"),
+	array("物流","DHL"),
+	array("医药","罗氏","克莱恩","西安杨森"),
+	array("餐饮","百胜","喜达屋","Jetwing"),
+	array("教育"),
+	array("能源"),
+	array("政府")
+);?>
+<!-- 结束：修改行业分类与公司 -->
+<!-- 输出 -->
+<?php foreach($category as $key => $company) { ?>
+	<div class="topic-block">
+		<div class="col-md-2">
+			<h3><a href="topic/<?php _e($company[0]); ?>"><?php _e($company[0]); ?></a></h3>
+		</div>
+		<div class="col-md-10">
+			<?php for ($i=1; $i<sizeof($company); $i++) { ?>
+				<?php $company_name = $company[$i]; ?>
+				<a href="topic/<?php _e($company_name); ?>" class="aw-topic-name-big aw-topic-name"><span><?php _e($company_name); ?></span></a>
+			<?php } ?>
+		</div>
+	</div>
+<? } ?>
+<!-- 结束：输出 -->
